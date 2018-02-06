@@ -1,0 +1,80 @@
+Configuration	LoRa_End_Device_STM
+STM32CubeMX 	4.19.0
+Date	03/20/2017
+MCU	STM32F103CBTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PD0-OSC_IN
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PD1-OSC_OUT
+RTC	Activate Clock Source	RTC_VS_RTC_Activate	VP_RTC_VS_RTC_Activate
+RTC	Activate Calendar	RTC_VS_RTC_Calendar	VP_RTC_VS_RTC_Calendar
+RTC	No RTC Output	RTC_No_RTC_Output	VP_RTC_No_RTC_Output
+SPI1	Full-Duplex Master	SPI1_MISO	PA6
+SPI1	Full-Duplex Master	SPI1_MOSI	PA7
+SPI1	Full-Duplex Master	SPI1_SCK	PA5
+SPI1	Hardware NSS Output Signal	SPI1_NSS	PA4
+SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
+SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+USART1	Asynchronous	USART1_RX	PA10
+USART1	Asynchronous	USART1_TX	PA9
+USB	Device (FS)	USB_DM	PA11
+USB	Device (FS)	USB_DP	PA12
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+5	PD0-OSC_IN	RCC_OSC_IN	
+6	PD1-OSC_OUT	RCC_OSC_OUT	
+10	PA0-WKUP	GPIO_Output	
+11	PA1	GPIO_Output	
+14	PA4	SPI1_NSS	
+15	PA5	SPI1_SCK	
+16	PA6	SPI1_MISO	
+17	PA7	SPI1_MOSI	
+18	PB0	GPIO_EXTI0	
+19	PB1	GPIO_EXTI1	
+20	PB2	GPIO_EXTI2	
+30	PA9	USART1_TX	
+31	PA10	USART1_RX	
+32	PA11	USB_DM	
+33	PA12	USB_DP	
+34	PA13	SYS_JTMS-SWDIO	
+37	PA14	SYS_JTCK-SWCLK	
+38	PA15	GPIO_Output	
+39	PB3	GPIO_EXTI3	
+40	PB4	GPIO_EXTI4	
+41	PB5	GPIO_EXTI5	
+43	PB7	GPIO_Output	
+45	PB8	GPIO_Output	
+46	PB9	GPIO_Output	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : LoRa_End_Device_STM
+Project Folder : D:\Implementation\LoRa\LoRa_End_Device_STM
+Toolchain / IDE : SW4STM32
+Firmware Package Name and Version : STM32Cube FW_F1 V1.4.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : Balanced Size/Speed
+
+
+
+
+
+

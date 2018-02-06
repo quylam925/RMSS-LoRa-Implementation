@@ -1,0 +1,82 @@
+Bug #1 (Buffer Overflow)
+Current Status: solved
+Hadler: Woo-Sung Jung (ETRI)
+Memo: 
+	When UART RX/VCP RX recieve more than 62 bytes (CR, LF will be added), temporary buffer will be overflow.
+	Currnet temporary buffer size = 64 bytes
+How to solve?
+	Maximum buffer size is 256 Byte. (Max LoRa FIFO Size)
+	Notice. Max Application size is 242 (255 - 13 Header Overhead)
+	UWB data has to break one long packet to multiple 242 (or below size)packets.
+	Current version of LoRa imp[lementation does not support Fragmentation.
+
+Bug #2 (UWB communication error)
+Current Status: solved
+Hadler: Woo-Sung Jung (ETRI)
+Memo: 
+	When UART RX interval is less than 1 seconds than packet buffer data is concatenated.
+How to solve?
+	
+
+Bug #3 (RSSI overflow)
+Current Status: solved
+Hadler: Woo-Sung Jung (ETRI)
+Memo: 
+	LoRa RSSI is not 8bit integer (only FSK RSSI value is 8bit integer)
+	some RSSI value show the abnormal value (eg. 125)
+How to solve?
+	int8_t -> int16_t
+	
+
+Bug #4 (RTC Hard Fault Event)
+Current Status: solved
+Hadler: Woo-Sung Jung (ETRI)
+Memo: 
+	Hard Fault Event ouurs when running RTC IRQ Handler..
+How to solve?
+	NULL pointer Check(TimerListHead) in TimerIrqHandler function
+
+Bug #5 (Rx Fail..)
+Current Status: assigned
+Hadler: Woo-Sung Jung (ETRI)
+Memo: 
+	End device does not receive LoRa packet from GW when RX window is open..
+	End Device Rx windows is disabled
+	GW closed Rx windows when incomming packet errors are occurs...
+	
+Bug #6 (VCP Rx)
+Current Status: solved
+Hadler: Woo-Sung Jung (ETRI)
+Memo: 
+	VCP block size is 64 byte in Full Speed Mode.
+How to solve?	
+	Main routine calls multiple VCP_read / VCP_write functions...
+
+
+[TODO List]
+
+TODO #1 (Retransmission process)
+Current Status: open
+Hadler: Woo-Sung Jung (ETRI)
+Memo: 
+	Construct Retransmission table when confirmed data is requested
+	When ACK data is received, frame of Retransmission table is clear.
+	
+TODO #2 (ADR)
+Current Status: open
+Hadler: Woo-Sung Jung (ETRI)
+Memo: 
+	Depend on ADR flag, Network Server (or End Device) controls data rate.
+	
+TODO #3 (FPending)
+Current Status: open
+Hadler: Woo-Sung Jung (ETRI)
+Memo: 
+	Transmit another frame to gateway..
+
+TODO #4 (Code Cleansing)
+Current Status: Open	
+Hadler: Woo-Sung Jung (ETRI)
+Memo:
+	AES codes have unused routine.. remove code lines...
+	

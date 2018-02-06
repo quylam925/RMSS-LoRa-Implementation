@@ -1,0 +1,4 @@
+Copyright (c) 2017, ETRI (Electronics and Telecommunications Research Institute)
+All rights reserved.
+
+This program uses the SX1276 chipset control codes by Semtech (Authors: Miguel Luis, Gregory Cristian and Wael Guibene)
